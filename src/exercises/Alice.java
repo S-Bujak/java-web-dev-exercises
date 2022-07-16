@@ -10,9 +10,16 @@ public class Alice {
 
 
         System.out.println("What do you want to search for in the opening line of Alice's Adventures in Wonderland? ");
-        boolean search = aliceOpening.toLowerCase().contains(input.next().toLowerCase());
+
+        String searchTerm = input.nextLine();
+
+        boolean search = aliceOpening.toLowerCase().contains(searchTerm.toLowerCase());
+        Integer index = aliceOpening.indexOf(searchTerm);
+        Integer length = searchTerm.length();
+        String modified = aliceOpening.replace(searchTerm, "");
         if (search) {
-            System.out.println("Search found");
+            System.out.println("Search found first at index " + index + ". The search term is " + length + " characters long.");
+            System.out.println(modified);
         } else {
             System.out.println("Search not found");
         }
