@@ -9,10 +9,18 @@ public class Main {
         ArrayList<Flavor> flavors = menu.getFlavors();
         ArrayList<Cone> cones = menu.getCones();
         Comparator comparator = new FlavorComparator();
+        Comparator anotherComparator = new ConeComparator();
 
         flavors.sort(comparator);
+        for (Flavor flavor :flavors) {
+            System.out.println(flavor.getName());
+        }
 
-        cones.sort(comparator);
+
+        cones.sort(anotherComparator);
+        for (Cone cone: cones) {
+            System.out.println(cone.getCost());
+        }
 
 
 
